@@ -9,6 +9,7 @@ const sequelize = new Sequelize(
     {
         logging: false,
         native: false,
+        
     }
 );
 
@@ -38,14 +39,14 @@ let capsEntries = entries.map((entry) => [
 sequelize.models = Object.fromEntries(capsEntries);
 
 //aqui van los modelos definidos ejemplo {Instrument, Category, Admin, Cart, Payment,User}
-const { User, Transactions } = sequelize.models;
+//const { User, Transactions } = sequelize.models;
 
-Transactions.hasOne(User);
+/* Transactions.hasOne(User);
 User.belongsTo(Transactions, {
     onDelete: 'cascade',
     onUpdate: 'cascade',
     hooks: true,
-});
+}); */
 
 module.exports = {
     ...sequelize.models,

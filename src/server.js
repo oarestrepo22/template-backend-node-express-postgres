@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Rutas
 app.get('/', (req, res) => {
-    res.send('Hello World !');
+    res.send('Server running');
 });
 
 module.exports = app;
